@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import Hangman from "./components/Hangman";
+import { getMovies } from "./api/api";
 
-function App() {
+const App = () => {
+  const [play, setPlay] = useState(false);
+
+  useEffect(() => {
+    getMovies();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <h1>HANGMAN</h1>
+
+      {!play && (
+        <button
+          className="btn btn-danger m-1 px-4 py-1"
+          onClick={() => {
+            setPlay(true);
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          Play
+        </button>
+      )}
+      {play && <Hangman play={play} handlePlay={setPlay} />}
     </div>
   );
-}
+};
 
 export default App;
