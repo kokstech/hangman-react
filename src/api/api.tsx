@@ -14,7 +14,7 @@ export function testApi() {
   axios
     .get("https://kokstech-node-api.onrender.com/")
     .then((res) => {
-      console.log(res.data)
+      console.log(res.data.message)
     });
 }
 
