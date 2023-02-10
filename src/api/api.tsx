@@ -16,5 +16,6 @@ export function testApi() {
     .then((res) => {
       console.log(res.data)
     });
+}
 
 
