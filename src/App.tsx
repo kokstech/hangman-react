@@ -9,6 +9,11 @@ const App = () => {
     getMovies();
   }, []);
   
+      useEffect(() => {
+  console.log("test")
+    testApi()
+  }, [play]);
+  
   return (
     <div className="App">
       <h1>HANGMAN!</h1>
