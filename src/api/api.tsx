@@ -7,3 +7,7 @@ export function getMovies() {
     res.data.map((movie: any) => movies.push(movie.name));
   });
 }
+
+getMovies();
+
+console.log("kita");
