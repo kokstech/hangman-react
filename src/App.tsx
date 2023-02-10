@@ -7,9 +7,8 @@ const App = () => {
 
   useEffect(() => {
     getMovies();
-    testApi()
   }, []);
-
+  
   return (
     <div className="App">
       <h1>HANGMAN!</h1>
