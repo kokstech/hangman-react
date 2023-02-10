@@ -9,3 +9,12 @@ export function getMovies() {
       res.data.map((movie: any) => movies.push(movie.name));
     });
 }
+
+export function testApi() {
+  axios
+    .get("https://kokstech-node-api.onrender.com/")
+    .then((res) => {
+      console.log(res.data)
+    });
+
+
