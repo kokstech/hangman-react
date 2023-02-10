@@ -1,16 +1,12 @@
 import { useEffect, useState } from "react";
 import Hangman from "./components/Hangman";
-import { getMovies, testApi } from "./api/api";
+import { getMovies } from "./api/api";
 
 const App = () => {
   const [play, setPlay] = useState(false);
 
   useEffect(() => {
     getMovies();
-  }, []);
-
-  useEffect(() => {
-    testApi();
   }, [play]);
 
   return (
