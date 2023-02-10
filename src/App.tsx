@@ -7,7 +7,7 @@ const App = () => {
 
   useEffect(() => {
     getMovies();
-  }, [play]);
+  }, []);
 
   return (
     <div className="App">
