@@ -5,9 +5,9 @@ import Figure from "./Figure";
 import { getMovies, movies } from "../api/api";
 import ResetButton from "./ResetButton";
 
-if (movies.length === 0) {
-  getMovies();
-}
+// if (movies.length === 0) {
+//   getMovies();
+// }
 
 export let selectedWord: string =
   movies[Math.floor(Math.random() * movies.length)];
