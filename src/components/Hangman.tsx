@@ -5,6 +5,10 @@ import Figure from "./Figure";
 import { movies } from "../api/api";
 import ResetButton from "./ResetButton";
 
+if (movies.length === 0) {
+  movies.push("error");
+}
+
 export let selectedWord: string =
   movies[Math.floor(Math.random() * movies.length)];
 
