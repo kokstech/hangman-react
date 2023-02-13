@@ -2,12 +2,8 @@ import { useState, useEffect } from "react";
 import Keyboard from "./Keyboard";
 import Word from "./Word";
 import Figure from "./Figure";
-import { getMovies, movies } from "../api/api";
+import { movies } from "../api/api";
 import ResetButton from "./ResetButton";
-
-// if (movies.length === 0) {
-//   getMovies();
-// }
 
 export let selectedWord: string =
   movies[Math.floor(Math.random() * movies.length)];
