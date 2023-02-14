@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import env from "react-dotenv";
+
 import Hangman from "./components/Hangman";
 import { getMovies, movies } from "./api/api";
 
@@ -23,9 +23,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>
-        HANGMAN! {env.BACKEND_URL ? env.BACKEND_URL : process.env.BACKEND_URL}
-      </h1>
+      <h1>HANGMAN!</h1>
 
       {!play && (
         <button
