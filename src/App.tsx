@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import CustomForm from "./components/Form";
 import Hangman from "./components/Hangman";
 import { getMovies, movies } from "./api/api";
 
@@ -24,8 +24,17 @@ const App = () => {
   return (
     <div className="App">
       <h1>HANGMAN!</h1>
+      <div>
+        {!play && (
+          <CustomForm
+            playHangman={() => {
+              setPlay(true);
+            }}
+          />
+        )}
+      </div>
 
-      {!play && (
+      {/* {!play && (
         <button
           className="btn btn-danger m-1 px-4 py-1"
           onClick={() => {
@@ -34,7 +43,7 @@ const App = () => {
         >
           Play
         </button>
-      )}
+      )} */}
       {play && checkDb && <Hangman play={play} handlePlay={setPlay} />}
     </div>
   );

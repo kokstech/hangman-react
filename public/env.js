@@ -27,7 +27,7 @@ window.env = {
   "npm_config_userconfig": "/Users/mac/.npmrc",
   "npm_config_init_module": "/Users/mac/.npm-init.js",
   "__CFBundleIdentifier": "com.googlecode.iterm2",
-  "npm_command": "start",
+  "npm_command": "run-script",
   "PWD": "/Users/mac/Projects/react-projects/hangman-ts",
   "npm_lifecycle_event": "start",
   "EDITOR": "vi",
