@@ -27,6 +27,8 @@ export default function Login(props: any) {
       .then((res) => {
         if (res.status === 200) {
           props.playHangman();
+        } else {
+          alert("incorrect password or username");
         }
       })
       .catch((error) => {
@@ -38,7 +40,7 @@ export default function Login(props: any) {
   }
 
   return (
-    <div className="container w-25">
+    <div className="container w-50">
       <form onSubmit={onSubmit}>
         <div className="form-group">
           <label htmlFor="name">Username</label>
