@@ -6,7 +6,6 @@ import { getMovies, movies } from "./api/api";
 const App = () => {
   const [play, setPlay] = useState(false);
   const [checkDb, setCheckDb] = useState(false);
-  const [incorrectInput, setIncorrectInput] = useState(false);
 
   useEffect(() => {
     getMovies();
@@ -28,9 +27,6 @@ const App = () => {
       <div>
         {!play && (
           <CustomForm
-            isIncorrectInput={() => {
-              setIncorrectInput(true);
-            }}
             playHangman={() => {
               setPlay(true);
             }}
