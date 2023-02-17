@@ -17,7 +17,7 @@ export default function Login(props: any) {
 
     const player = { ...form };
 
-    await fetch("https://hangman-backend.onrender.com/login", {
+    await fetch(`https://hangman-backend.onrender.com/${props.login}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -27,6 +27,8 @@ export default function Login(props: any) {
       .then((res) => {
         if (res.status === 200) {
           props.playHangman();
+        } else if (res.status && props.login === "signup") {
+          alert("username is already taken");
         } else {
           alert("incorrect password or username");
         }
@@ -65,7 +67,7 @@ export default function Login(props: any) {
         <div className="form-group">
           <input
             type="submit"
-            value="Play the game"
+            value={props.btnName}
             className="btn btn-primary"
           />
         </div>
