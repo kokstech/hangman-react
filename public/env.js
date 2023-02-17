@@ -55,5 +55,6 @@ window.env = {
   "npm_config_prefix": "/Users/mac/.nvm/versions/node/v19.2.0",
   "COLORTERM": "truecolor",
   "_": "/Users/mac/Projects/react-projects/hangman-ts/node_modules/.bin/react-dotenv",
-  "BACKEND_URL": "https://hangman-backend.onrender.com/api"
+  "BACKEND_URL": "https://hangman-backend.onrender.com/api",
+  "USER_URL": "https://hangman-backend.onrender.com/"
 };

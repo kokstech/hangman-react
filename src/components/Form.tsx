@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import env from "react-dotenv";
 
 export default function Login(props: any) {
   const [form, setForm] = useState({
@@ -17,7 +18,7 @@ export default function Login(props: any) {
 
     const player = { ...form };
 
-    await fetch(`https://hangman-backend.onrender.com/${props.login}`, {
+    await fetch(`${env.USER_URL}${props.login}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
