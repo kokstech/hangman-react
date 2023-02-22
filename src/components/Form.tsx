@@ -18,7 +18,7 @@ export default function Login(props: any) {
 
     const player = { ...form };
 
-    await fetch(`${process.env.USER_URL}${props.login}`, {
+    await fetch(`https://hangman-backend.onrender.com/${props.login}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
