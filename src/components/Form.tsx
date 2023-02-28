@@ -57,7 +57,7 @@ export default function Login(props: any) {
         <div className="form-group mb-3">
           <label htmlFor="password">Password</label>
           <input
-            type="text"
+            type="password"
             className="form-control"
             id="position"
             value={form.password}
