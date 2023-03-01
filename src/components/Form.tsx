@@ -17,27 +17,28 @@ export default function Login(props: any) {
 
     const player = { ...form };
 
-    await fetch(`https://hangman-backend.onrender.com/${props.login}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(player),
-    })
-      .then((res) => {
-        if (res.status === 200) {
-          props.playHangman();
-        } else if (res.status && props.login === "signup") {
-          alert("username is already taken");
-        } else {
-          alert("incorrect password or username");
+    try {
+      const response = await fetch(
+        `https://hangman-backend.onrender.com/${props.login}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(player),
         }
-      })
-      .catch((error) => {
-        window.alert(error);
-        return;
-      });
+      );
 
+      if (response.status === 200) {
+        props.playHangman();
+      } else if (response.status && props.login === "signup") {
+        alert("username is already taken");
+      } else {
+        alert("incorrect password or username");
+      }
+    } catch (error) {
+      console.error(error);
+    }
     setForm({ username: "", password: "" });
   }
 
