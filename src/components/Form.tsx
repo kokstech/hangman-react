@@ -31,8 +31,12 @@ export default function Login(props: any) {
 
       if (response.status === 200) {
         props.playHangman();
-      } else if (response.status && props.login === "signup") {
-        alert("username is already taken");
+      } else if (props.login === "signup") {
+        if (response.status === 400) alert("username is already taken");
+        else if (response.status === 422)
+          alert(
+            "username must be at least 5 characters long and password must be at least 7 characters"
+          );
       } else {
         alert("incorrect password or username");
       }
