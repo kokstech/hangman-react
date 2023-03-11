@@ -35,9 +35,7 @@ export default function Login(props: any) {
         if (response.status === 400) alert("username is already taken");
         else if (response.status === 422) {
           const errorMsg = await response.json();
-          console.log(response.json());
-          console.log(errorMsg.msg);
-          alert(errorMsg.errors);
+          await alert(errorMsg.errors);
         }
       } else {
         alert("incorrect password or username");
