@@ -5,18 +5,7 @@ import { getMovies } from "./api/api";
 
 const App = () => {
   const [play, setPlay] = useState(false);
-  //const [checkDb, setCheckDb] = useState(false);
   const [hasAccount, setHasAccount] = useState(true);
-
-  // useEffect(() => {
-  //   getMovies();
-  //   if (movies.length >= 1) {
-  //     setCheckDb(true);
-  //   } else {
-  //     getMovies();
-  //     setCheckDb(true);
-  //   }
-  // }, []);
 
   useEffect(() => {
     getMovies();

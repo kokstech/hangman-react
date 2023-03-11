@@ -28,16 +28,14 @@ export default function Login(props: any) {
           body: JSON.stringify(player),
         }
       );
+      const data = await response.json();
 
       if (response.status === 200) {
         props.playHangman();
       } else if (props.login === "signup") {
         if (response.status === 400) alert("username is already taken");
         else if (response.status === 422) {
-          // const errorMsg = await response.json();
-          alert(
-            "password must be: minLength: 7 and contain: minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 1"
-          );
+          alert(data.errors.msg);
         }
       } else {
         alert("incorrect password or username");
