@@ -36,7 +36,7 @@ export default function Login(props: any) {
         else if (response.status === 422) {
           const errorMsg = await response.json();
           console.log(response.json());
-          console.log(errorMsg);
+          console.log(errorMsg.msg);
           alert(errorMsg.errors);
         }
       } else {
