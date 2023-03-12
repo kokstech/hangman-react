@@ -14,7 +14,7 @@ const App = () => {
   return (
     <>
       <div className="App">
-        <h1>HANGMAN!</h1>
+        <h1 className="m-3">HANGMAN!</h1>
         <div>
           {!play && hasAccount && (
             <CustomForm

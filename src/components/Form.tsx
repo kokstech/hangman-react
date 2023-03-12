@@ -47,36 +47,38 @@ export default function Login(props: any) {
   }
 
   return (
-    <div className="container w-50">
-      <form onSubmit={onSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Username</label>
-          <input
-            type="text"
-            className="form-control"
-            id="name"
-            value={form.username}
-            onChange={(e) => updateForm({ username: e.currentTarget.value })}
-          />
-        </div>
-        <div className="form-group mb-3">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            className="form-control"
-            id="position"
-            value={form.password}
-            onChange={(e) => updateForm({ password: e.currentTarget.value })}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="submit"
-            value={props.btnName}
-            className="btn btn-primary"
-          />
-        </div>
-      </form>
+    <div className="container">
+      <div className="row align-items-center">
+        <form onSubmit={onSubmit}>
+          <div className="form-group col-lg-4 col-md-6 mx-auto mb-3">
+            <label htmlFor="name">Username</label>
+            <input
+              type="text"
+              className="form-control"
+              id="name"
+              value={form.username}
+              onChange={(e) => updateForm({ username: e.currentTarget.value })}
+            />
+          </div>
+          <div className="form-group col-lg-4 col-md-6 mx-auto mb-3">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              className="form-control"
+              id="position"
+              value={form.password}
+              onChange={(e) => updateForm({ password: e.currentTarget.value })}
+            />
+          </div>
+          <div className="form-group col-lg-4 col-md-6 mx-auto mb-2">
+            <input
+              type="submit"
+              value={props.btnName}
+              className="btn btn-primary"
+            />
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
