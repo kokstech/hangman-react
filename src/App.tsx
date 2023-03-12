@@ -18,7 +18,7 @@ const App = () => {
         <div>
           {!play && hasAccount && (
             <CustomForm
-              login="login"
+              params="login"
               btnName="login to play"
               playHangman={() => {
                 setPlay(true);
@@ -29,11 +29,10 @@ const App = () => {
         <div>
           {!play && !hasAccount && (
             <CustomForm
-              login={"signup"}
+              params="signup"
               btnName="create account"
               playHangman={() => {
                 setHasAccount(true);
-                alert("success");
               }}
             />
           )}

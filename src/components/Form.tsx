@@ -19,7 +19,7 @@ export default function Login(props: any) {
 
     try {
       const response = await fetch(
-        `https://hangman-backend.onrender.com/${props.login}`,
+        `https://hangman-backend.onrender.com/${props.params}`,
         {
           method: "POST",
           headers: {
@@ -29,16 +29,17 @@ export default function Login(props: any) {
         }
       );
       const data = await response.json();
+      console.log(data);
 
-      if (response.status === 200) {
+      if (response.status === 200 && props.params === "login") {
         props.playHangman();
-      } else if (props.login === "signup") {
-        if (response.status === 400) alert("username is already taken");
-        else if (response.status === 422) {
-          alert(data.errors.msg);
-        }
-      } else {
-        alert("incorrect password or username");
+      } else if (response.status === 200 && props.params === "signup") {
+        alert(data.successMsg);
+        props.playHangman();
+      } else if (response.status === 400) {
+        alert(data.errorMsg);
+      } else if (response.status === 422) {
+        alert(data.errors.msg);
       }
     } catch (error) {
       console.error(error);
