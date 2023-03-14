@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import CustomForm from "./components/Form";
 import Hangman from "./components/Hangman";
 import { getMovies } from "./api/api";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   const [play, setPlay] = useState(false);
@@ -14,6 +15,13 @@ const App = () => {
   return (
     <>
       <div className="App">
+        {play && (
+          <Navbar
+            handlePlay={() => {
+              setPlay(false);
+            }}
+          />
+        )}
         <h1 className="m-3">HANGMAN!</h1>
         <div>
           {!play && hasAccount && (
@@ -51,7 +59,14 @@ const App = () => {
             </button>
           </div>
         )}
-        {play && <Hangman play={play} handlePlay={setPlay} />}
+        {play && (
+          <Hangman
+            play={play}
+            handlePlay={() => {
+              setPlay(false);
+            }}
+          />
+        )}
       </div>
     </>
   );
