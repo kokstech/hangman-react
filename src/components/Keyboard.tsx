@@ -29,7 +29,7 @@ const keys = [
 
 export default function Keyboard(props: any) {
   return (
-    <>
+    <div>
       {keys.map((key) => {
         return (
           <button
@@ -50,6 +50,6 @@ export default function Keyboard(props: any) {
           </button>
         );
       })}
-    </>
+    </div>
   );
 }

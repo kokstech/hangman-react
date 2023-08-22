@@ -97,7 +97,7 @@ export default function Hangman(props: any) {
             </div>
           )}
         </div>
-        <div>
+        <div className="keyboard">
           <Keyboard
             wrongLetters={wrongLetters}
             correctLetters={correctLetters}

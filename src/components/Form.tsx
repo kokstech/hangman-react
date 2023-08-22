@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Modals from "./Modals";
 
 export default function Login(props: {
   params: string;
@@ -10,6 +11,15 @@ export default function Login(props: {
     password: "",
   });
 
+  const [modalMsg, setModalMsg] = useState("");
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => {
+    setShow(false);
+    setModalMsg("");
+  };
+  const handleShow = () => setShow(true);
+
   function updateForm(value: any) {
     return setForm((prev) => {
       return { ...prev, ...value };
@@ -18,7 +28,7 @@ export default function Login(props: {
 
   async function onSubmit(e: any) {
     e.preventDefault();
-
+    handleShow();
     const player = { ...form };
 
     try {
@@ -37,21 +47,32 @@ export default function Login(props: {
       if (response.status === 200 && props.params === "login") {
         props.playHangman();
       } else if (response.status === 200 && props.params === "signup") {
-        alert(data.successMsg);
+        setModalMsg(data.successMsg);
+
         props.playHangman();
       } else if (response.status === 400) {
-        alert(data.errorMsg);
+        setModalMsg(data.errorMsg);
       } else if (response.status === 422) {
-        alert(data.errors.msg);
+        setModalMsg(data.errors.msg);
       }
     } catch (error) {
       console.error(error);
     }
+
     setForm({ username: "", password: "" });
   }
 
   return (
     <div className="container">
+      {modalMsg !== "" && (
+        <Modals
+          handleClose={handleClose}
+          handleShow={handleShow}
+          show={show}
+          modalMsg={modalMsg}
+        />
+      )}
+
       <div className="row align-items-center">
         <form onSubmit={onSubmit}>
           <div className="form-group col-lg-4 col-md-6 mx-auto mb-3">

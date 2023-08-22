@@ -25,16 +25,28 @@ button {
   margin: 5px;
 }
 
-.game-container {
+.keyboard {
+  width: 50%;
+  margin: 0 auto;
+}
+
+/* .game-container {
   padding: 20px 30px;
   position: relative;
   margin: auto;
   height: 350px;
   width: 450px;
-}
+} */
 
 .figure-container {
   fill: transparent;
   stroke-width: 4px;
   stroke-linecap: round;
+}
+
+@media (max-width: 800px) {
+  .keyboard {
+    width: 100%;
+    margin: auto;
+  }
 }

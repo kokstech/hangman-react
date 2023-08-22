@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import CustomForm from "./components/Form";
 import Hangman from "./components/Hangman";
 import { getMovies } from "./api/api";
-import Navbar from "./components/Navbar";
 
 const App = () => {
   const [play, setPlay] = useState(false);
