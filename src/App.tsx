@@ -14,14 +14,7 @@ const App = () => {
 
   return (
     <>
-      <div className="App">
-        {play && (
-          <Navbar
-            handlePlay={() => {
-              setPlay(false);
-            }}
-          />
-        )}
+      <div className="app">
         <h1 className="m-3">HANGMAN!</h1>
         <div>
           {!play && hasAccount && (

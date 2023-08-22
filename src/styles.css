@@ -1,14 +1,28 @@
-.App {
+html,
+body,
+.rootLayout {
+  box-sizing: border-box;
   font-family: sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.isDark {
+  background-color: black;
+  color: white;
+  stroke: white;
+}
+
+.isLight {
+  stroke: black;
+}
+
+.app {
   text-align: center;
 }
 
 button {
   margin: 5px;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 .game-container {
@@ -21,7 +35,6 @@ button {
 
 .figure-container {
   fill: transparent;
-  stroke: black;
   stroke-width: 4px;
   stroke-linecap: round;
 }

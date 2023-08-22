@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-export default function Login(props: any) {
+export default function Login(props: {
+  params: string;
+  playHangman: () => void;
+  btnName: string;
+}) {
   const [form, setForm] = useState({
     username: "",
     password: "",
@@ -29,7 +33,6 @@ export default function Login(props: any) {
         }
       );
       const data = await response.json();
-      console.log(data);
 
       if (response.status === 200 && props.params === "login") {
         props.playHangman();
