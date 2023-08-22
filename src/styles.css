@@ -24,6 +24,10 @@ body,
 button {
   margin: 5px;
 }
+button:focus {
+  outline: none !important;
+  outline-offset: none !important;
+}
 
 .keyboard {
   width: 50%;

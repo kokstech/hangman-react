@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Modals from "./Modals";
+import MyButton from "./MyButton";
 
 export default function Login(props: {
   params: string;
@@ -96,10 +97,10 @@ export default function Login(props: {
             />
           </div>
           <div className="form-group col-lg-4 col-md-6 mx-auto mb-2">
-            <input
-              type="submit"
-              value={props.btnName}
-              className="btn btn-primary"
+            <MyButton
+              classes="btn btn-primary"
+              typ="submit"
+              label={props.btnName}
             />
           </div>
         </form>

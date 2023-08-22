@@ -7,9 +7,8 @@ export default function Layout(props: any) {
   return (
     <div className={`rootLayout ${isDark ? "isDark" : "isLight"}`}>
       <Navbar
-        // handlePlay={() => setPlay(false)}
         isDark={isDark}
-        dark={(e: { preventDefault: () => void }) => {
+        toggleDark={(e: { preventDefault: () => void }) => {
           e.preventDefault();
           setIsDark(!isDark);
         }}
