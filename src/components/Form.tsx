@@ -77,11 +77,12 @@ export default function Login(props: {
       <div className="row align-items-center">
         <form onSubmit={onSubmit}>
           <div className="form-group col-lg-4 col-md-6 mx-auto mb-3">
-            <label htmlFor="name">Username</label>
+            <label htmlFor="username">Username</label>
             <input
+              autoComplete="on"
               type="text"
               className="form-control"
-              id="name"
+              id="username" // Updated id to "username"
               value={form.username}
               onChange={(e) => updateForm({ username: e.currentTarget.value })}
             />
@@ -91,7 +92,7 @@ export default function Login(props: {
             <input
               type="password"
               className="form-control"
-              id="position"
+              id="password" // Updated id to "password"
               value={form.password}
               onChange={(e) => updateForm({ password: e.currentTarget.value })}
             />
